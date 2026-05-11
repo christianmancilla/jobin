@@ -1,1 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muestra tu experiencia y habilidades en un solo lugar. Descarga tu peril y envíalo por PDF de forma gratuita."/>
+  <title>Crea tu perfil laboral online gratis | Jobin</title>
+  <meta property="fb:app_id" content="960171599975003" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Crea tu perfil laboral online gratis | Jobin"/>
+  <meta property="og:description" content="Muestra tu experiencia y habilidades en un solo lugar. Descarga tu peril y envíalo por PDF de forma gratuita."/>
+  <meta property="og:url" content="https://jobin.app/invite/es"/>
+  <meta property="og:image" content="https://jobin.app/invite-banner.jpg"/>
+  <link rel="manifest" href="https://jobin.app/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://jobin.app/favicon.ico">
+  <link rel="apple-touch-icon" href="https://jobin.app/icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://jobin.app/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://jobin.app/icon-512x512.png">
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --primary-dark: #584ff5;
+      --secondary: #0f172a;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --border: #e5e7eb;
+      --radius: 20px;
+      --shadow: 0 20px 50px rgba(0,0,0,0.08);
+      --max-width: 1200px;
+    }
 
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+	
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229,231,235,0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+	
+    .logo img {
+      height: 42px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #eef2ff;
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 5rem 0 4rem;
+      background: linear-gradient(180deg, #f5f7ff 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1.02;
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.04em;
+      color: var(--secondary);
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+      color: var(--secondary);
+    }
+
+    .lead {
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 60ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .mockup {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .profile-preview {
+      padding: 1.5rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+      color: white;
+    }
+
+    .profile-preview h3 {
+      margin: 0 0 .5rem;
+      font-size: 1.5rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section.alt {
+      background: var(--bg-soft);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+    }
+
+    .cta h2 { color: white; }
+    .cta .lead { color: rgba(255,255,255,0.8); margin-inline: auto; }
+
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .nav-links {
+        gap: 0.75rem;
+      }
+
+      .btn {
+        padding: 0.85rem 1.3rem;
+      }
+    }
+
+	@media (max-width: 600px) {
+		.cv {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	
+	.share-container {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	  margin-bottom:40px;
+	  justify-content: center;
+	}
+
+	.share-btn {
+	  background: #ffffff;
+	  border: none;
+	  cursor: pointer;
+	}
+</style>
+</head>
+<body>
+  <header>
+  <div class="container nav">
+    <a href="https://jobin.app" class="logo">
+      <img src="https://jobin.app/logo.svg" alt="Jobin" />
+    </a>
+    <nav id="menu-items" class="nav-links">
+      <div class="gtranslate_wrapper"></div>
+    </nav>
+  </div>
+<script>
+    window.gtranslateSettings = {
+      default_language: "es",
+      native_language_names: true,
+      detect_browser_language: true,
+      wrapper_selector: ".gtranslate_wrapper",
+      select_language_label: ""
+    };
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+</header>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Tu perfil profesional online, listo para compartir.</h1>
+        <p class="lead">Crea tu perfil laboral en minutos, compártelo con empresas, reclutadores y clientes, y destaca tu experiencia, habilidades y servicios en un solo lugar.</p>
+        <div class="hero-actions">
+          <a href="https://jobin.app/register" class="btn btn-primary">Crea tu perfil GRATIS</a>
+        </div>
+      </div>
+      <div class="hero-card cv">
+        <div class="mockup">
+          <div class="profile-preview" style="padding-left: 10px;padding-right: 10px;">
+		  <div style="float:left;width:45%;">
+		  <img src="https://jobin.app/images/profile-pdf.png" style="width:100%;border-radius:5%;">
+		  </div>
+		  <div style="float:left;width:44%;margin-left:10px;">
+            <h3>Tu nombre aquí</h3>
+            <p style="margin-top: 0;margin-bottom: 0;">Profesión u oficio · Ciudad, País.</p>
+            <p style="margin-top: 0;margin-bottom: 0;">Experiencia, habilidades y servicios en una página profesional que puedes compartir con un solo enlace.</p>
+		  </div>
+		  </div>
+          <div class="card">
+            <strong>✔ Comparte tu perfil</strong><br>
+            <strong>✔ Descárgalo en PDF</strong><br>
+            <strong>✔ Aparece en búsquedas</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section>
+<div class="container" style="margin-bottom:50px;">
+<div class="share-container">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://jobin.app/invite/es"
+     target="_blank" rel="noopener" class="share-btn">
+     <img src="https://jobin.app/images/facebook.png" style="border:none;">
+  </a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://jobin.app/invite/es"
+     target="_blank" rel="noopener" class="share-btn">
+     <img src="https://jobin.app/images/linkedin.png" style="border:none;">
+  </a>
+  <a href="https://x.com/share?url=https://jobin.app/invite/es"
+     target="_blank" rel="noopener" class="share-btn">
+     <img src="https://jobin.app/images/x.png" style="border:none;">
+  </a>
+  <a href="mailto:?subject=Te invito a visitar Jobin&body=https://jobin.app"
+     class="share-btn">
+     <img src="https://jobin.app/images/mail.png" style="border:none;">
+  </a>
+  <a href="https://api.whatsapp.com/send?text=Te invito%20a%20visitar%20Jobin%20https://jobin.app"
+     target="_blank" rel="noopener" class="share-btn">
+     <img src="https://jobin.app/images/whatsapp.png" style="border:none;">
+  </a>
+  <button onclick="copyLink()" class="share-btn" style="padding-left: 0;">
+     <img src="https://jobin.app/images/url.png" style="border:none;">
+  </button>
+</div>
+</div>
+</section>
+</body>
+<script>
+function copyLink() {
+  const url = "https://jobin.app";
+
+  navigator.clipboard.writeText(url).then(() => {
+    alert("Link Copiado");
+  }).catch(() => {
+    //prompt("Copia este enlace:", url);
+  });
+}
+</script>
+</html>
