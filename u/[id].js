@@ -1,4 +1,13 @@
-<?php
-echo "<h1>Hola Mundo desde PHP en Vercel</h1>";
-echo "Fecha actual: " . date('Y-m-d H:i:s');
-?>
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ]
+}
