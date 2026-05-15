@@ -32,8 +32,6 @@ export async function getServerSideProps(context) {
 
 export default function UserShare({ id, profile }) {
 
-  const targetUrl = `https://jobin.app/user/${id}`;
-
   const title = profile
     ? `${profile.name} - Jobin`
     : 'Perfil profesional en Jobin';
@@ -63,25 +61,24 @@ export default function UserShare({ id, profile }) {
 
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content={targetUrl} />
-
         <meta
-          httpEquiv="refresh"
-          content={`0;url=${targetUrl}`}
+          property="og:url"
+          content={`https://share.jobin.app/u/${id}`}
         />
 
       </Head>
 
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.location.href = "${targetUrl}";
-          `
-        }}
-      />
-
       <div style={{ padding: '40px', fontFamily: 'Arial' }}>
-        Redirecting...
+        <h1>{title}</h1>
+
+        <p>{description}</p>
+
+        <img
+          src={image}
+          width="300"
+          alt={title}
+        />
+
       </div>
     </>
   );
