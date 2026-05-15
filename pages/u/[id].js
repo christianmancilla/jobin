@@ -60,7 +60,7 @@ export default function UserShare({ id, profile }) {
         />
 
         <meta property="og:image" content={image} />
-        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:type" content="website" />
 
         <meta
