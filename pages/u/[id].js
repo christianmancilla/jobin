@@ -59,7 +59,7 @@ export default function UserShare({ id, profile }) {
           content={description}
         />
 
-        <meta property="og:image" content="https://share.jobin.app/jobin-share-og.jpg" />
+        <meta property="og:image" content="https://share.jobin.app/jobin-share-og-v2.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:type" content="website" />
         <meta
