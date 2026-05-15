@@ -80,6 +80,15 @@ export default function UserShare({ id, profile }) {
         />
 
       </div>
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      setTimeout(() => {
+        window.location.href = "${targetUrl}";
+      }, 1500);
+    `
+  }}
+/>    
     </>
   );
 }
