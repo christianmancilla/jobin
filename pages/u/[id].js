@@ -69,6 +69,15 @@ export default function UserShare({ id, profile }) {
       </Head>
 
       <div style={{ padding: '40px', fontFamily: 'Arial' }}>
+           <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      setTimeout(() => {
+        window.location.href = "${targetUrl}";
+      }, 1500);
+    `
+  }}
+/> 
         <h1>{title}</h1>
 
         <p>{description}</p>
@@ -80,15 +89,7 @@ export default function UserShare({ id, profile }) {
         />
 
       </div>
-        <script
-  dangerouslySetInnerHTML={{
-    __html: `
-      setTimeout(() => {
-        window.location.href = "${targetUrl}";
-      }, 1500);
-    `
-  }}
-/>    
+          
     </>
   );
 }
