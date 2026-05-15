@@ -59,7 +59,8 @@ export default function UserShare({ id, profile }) {
           content={description}
         />
 
-        <meta property="og:image" content={image} />
+        <meta property="og:image" content="https://cdn.jobin.app/jobin-og-1200x630-v1.jpg" />
+        <meta property="og:image:secure_url" content="https://cdn.jobin.app/jobin-og-1200x630-v1.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
