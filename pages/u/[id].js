@@ -1,34 +1,65 @@
+import Head from 'next/head';
+
 export async function getServerSideProps(context) {
 
   const { id } = context.params;
 
-  return {
-    props: {
-      id
-    }
-  };
+  try {
+
+    const response = await fetch(
+      `https://jobin.app/api/share_profile.php?id=${id}`
+    );
+
+    const data = await response.json();
+
+    return {
+      props: {
+        id,
+        profile: data
+      }
+    };
+
+  } catch (error) {
+
+    return {
+      props: {
+        id,
+        profile: null
+      }
+    };
+  }
 }
 
-export default function UserShare({ id }) {
+export default function UserShare({ id, profile }) {
 
   const targetUrl = `https://jobin.app/user/${id}`;
 
+  const title = profile
+    ? `${profile.name} - Jobin`
+    : 'Perfil profesional en Jobin';
+
+  const description = profile
+    ? `${profile.profession} · ${profile.city}, ${profile.country}`
+    : 'Conoce este perfil profesional en Jobin.';
+
+  const image = profile
+    ? profile.image
+    : 'https://share.jobin.app/logo-banner-800x800.jpg';
+
   return (
     <>
-      <head>
-        <title>Perfil profesional en Jobin</title>
+      <Head>
 
-        <meta property="og:title" content="Perfil profesional en Jobin" />
+        <title>{title}</title>
+
+        <meta property="og:title" content={title} />
 
         <meta
           property="og:description"
-          content="Conoce este perfil profesional en Jobin."
+          content={description}
         />
 
-        <meta
-          property="og:image"
-          content="https://share.jobin.app/invite-banner-v3.jpg"
-        />
+        <meta property="og:image" content={image} />
 
         <meta property="og:type" content="website" />
 
@@ -38,7 +69,8 @@ export default function UserShare({ id }) {
           httpEquiv="refresh"
           content={`0;url=${targetUrl}`}
         />
-      </head>
+
+      </Head>
 
       <script
         dangerouslySetInnerHTML={{
@@ -48,12 +80,7 @@ export default function UserShare({ id }) {
         }}
       />
 
-      <div
-        style={{
-          fontFamily: 'Arial',
-          padding: '40px'
-        }}
-      >
+      <div style={{ padding: '40px', fontFamily: 'Arial' }}>
         Redirecting...
       </div>
     </>
