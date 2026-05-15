@@ -32,6 +32,8 @@ export async function getServerSideProps(context) {
 
 export default function UserShare({ id, profile }) {
 
+  const targetUrl = `https://jobin.app/user/${id}`;
+
   const title = profile
     ? `${profile.name} - Jobin`
     : 'Perfil profesional en Jobin';
@@ -68,16 +70,24 @@ export default function UserShare({ id, profile }) {
 
       </Head>
 
-      <div style={{ padding: '40px', fontFamily: 'Arial' }}>
-           <script
-  dangerouslySetInnerHTML={{
-    __html: `
-      setTimeout(() => {
-        window.location.href = "${targetUrl}";
-      }, 1500);
-    `
-  }}
-/> 
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            setTimeout(() => {
+              window.location.href = "${targetUrl}";
+            }, 1500);
+          `
+        }}
+      />
+
+      <div
+        style={{
+          padding: '40px',
+          fontFamily: 'Arial',
+          textAlign: 'center'
+        }}
+      >
+
         <h1>{title}</h1>
 
         <p>{description}</p>
@@ -88,8 +98,10 @@ export default function UserShare({ id, profile }) {
           alt={title}
         />
 
+        <p>Redirecting to Jobin...</p>
+
       </div>
-          
+
     </>
   );
 }
